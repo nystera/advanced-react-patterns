@@ -6,7 +6,10 @@ import * as React from 'react'
 import warning from 'warning'
 import {Switch} from '../switch'
 
-const callAll = (...fns) => (...args) => fns.forEach(fn => fn?.(...args))
+const callAll =
+  (...fns) =>
+  (...args) =>
+    fns.forEach(fn => fn?.(...args))
 
 const actionTypes = {
   toggle: 'toggle',
@@ -113,7 +116,7 @@ function App() {
   return (
     <div>
       <div>
-        <Toggle on={bothOn} onChange={handleToggleChange} />
+        <Toggle on={bothOn} readOnly={true} />
         <Toggle on={bothOn} onChange={handleToggleChange} />
       </div>
       {timesClicked > 4 ? (

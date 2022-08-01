@@ -1,6 +1,7 @@
 // http://localhost:3000/isolated/examples/warnings.js
 
 import * as React from 'react'
+import warning from 'warning'
 
 function App() {
   const [name, setName] = React.useState()
@@ -9,7 +10,14 @@ function App() {
     <div>
       <div>
         <label>
-          Read only (missing onChange): <input value="yo" />
+          Read only (missing onChange):{' '}
+          <input
+            value="yo"
+            readOnly
+            onClick={() => {
+              warning(false, 'This is a read only segment')
+            }}
+          />
         </label>
       </div>
       <div>
